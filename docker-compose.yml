@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: persona_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: persona_root
+      MONGO_INITDB_ROOT_PASSWORD: strongpassword
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  minio:
+    image: minio/minio
+    container_name: persona_minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: persona_minio
+      MINIO_ROOT_PASSWORD: strongpassword
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+
+volumes:
+  mongo_data:
+  minio_data:
