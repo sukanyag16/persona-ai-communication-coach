@@ -1,6 +1,13 @@
-# Persona Backend Upgrade - Ready to Import
+# Persona AI Overview
 
-This package contains improved database models, migration and utility scripts, and a sample analyze route designed to integrate into an existing Node.js / Express backend.
+Persona AI is an AI-powered full-stack communication coaching application that analyzes user communication (text/speech) and provides actionable feedback on clarity, tone, confidence, and sentiment.
+The system leverages NLP techniques and LLM-based reasoning to help users improve their communication skills in professional and everyday scenarios.
+
+AI / NLP Components:
+Sentiment Analysis – Detects emotional tone
+Tone Classification – Identifies confidence, politeness, assertiveness
+LLM-based Feedback Generation – Provides improvement suggestions
+Rule-based Validation – Ensures meaningful and actionable feedback
 
 ## What is included
 - src/config/database.js (MongoDB connection helper)
